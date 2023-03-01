@@ -1,44 +1,35 @@
-<div id="top"></div>
-
 # Scouting P.A.S.S. Configuration
 
 ## **Configuration guide**
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li><a href="#overview">Overview</a></li>
-    <li><a href="#global">Global Attributes</a></li>
-    <li><a href="#game-sections">Game Sections</a></li>
-    <li><a href="#auton">Autonomous</a></li>
-    <li><a href="#teleop">Teleop</a></li>
-    <li><a href="#endgame">Endgame</a></li>
-    <li><a href="#post-match">Post-Match</a></li>
-    <li><a href="#element-types">Element Types</a></li>
-  </ol>
-</details>
+### Table of Contents
 
-<div id="overview"></div>
+1. [Overview](#overview)
+2. [Global](#global-attributes)
+3. [Game Sections](#game-sections)
+4. [Autonomous](#autonomous)
+5. [Teleop](#teleop)
+6. [Endgame](#endgame)
+7. [Post Match](#post-match)
+8. [Element Types](#element-types)
 
 ## Overview
 
 A JSON configuration file controls the elements of the game to track.  Create a new configuration file each year for the new game, or tweak it week to week to refine your scouting.  No additional coding needed.
 
-Example configurations are located in the <YEAR> directories. For examples, there are configurations for 2021, 2022, and 2023.
+Example configurations are located in the year directories. For examples, there are configurations for 2021, 2022, and 2023.
 
 Technically, this is a javascript file which contains a variable that is a JSON string.  For all practical purposes you can ignore the javascript part and treat this as a JSON file.
 
 The main section of the JSON contains the global attributes and the 5 sections of the game.   (FIVE SECTIONS?!? - We consider pre-match and post-match as parts of the game to facilitate the collection of scouting data.)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-<div id="global"></div>
+[Back to top](#scouting-pass-configuration)
 
 ## Global attributes
 
 There are only a few global attributes to set up the application:
 
-```
+```json
 {
   "title": "Scouting PASS 2023",
   "page_title": "Charged Up",
@@ -60,10 +51,10 @@ This will set the title at the top of the each web pages.
 
 This configuration dictates how checkboxes data will be reported.   Default setting is "Y/N".
 
-Acceptable values:<br>
-"YN" - If checked the output of the element will contain a "Y".  If not checked it will contain a "N".<br>
-"10" - If checked the output of the element will contain a "1".  If not checked it will contain a "0".<br>
-"TF" - If checked the output of the element will contain a "T".  If not checked it will contain a "F".<br>
+Acceptable values:  
+"YN" - If checked the output of the element will contain a "Y".  If not checked it will contain a "N".  
+"10" - If checked the output of the element will contain a "1".  If not checked it will contain a "0".  
+"TF" - If checked the output of the element will contain a "T".  If not checked it will contain a "F".  
 
 ### google-sheets-enable
 
@@ -71,8 +62,7 @@ To enable the Google Sheets interface, set this field to "true".  Default is "fa
 
 If you enable Google Sheets you'll want to also specify "gsCol" attributes on all the fields to allow more descriptive names of the columns in Google Sheets.  See the [GoogleSheets.md](GoogleSheets Docs) for more info.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-<div id="game-sections"></div>
+[Back to top](#scouting-pass-configuration)
 
 ## Game Sections
 
@@ -90,7 +80,7 @@ Each section maps to a separate page on the scouting screen and they progress in
 
 The JSON is formatted like this:
 
-```
+```json
 {
   <GLOBAL ATTRIBUTES>,
   "prematch": [
@@ -143,8 +133,7 @@ Games usually have a task that can only be done in the closing seconds of the ga
 
 Post-Match is used to collect data on the performance of the robot over the whole match.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-<div id="element-types"></div>
+[Back to top](#scouting-pass-configuration)
 
 ## Element Types
 
@@ -162,7 +151,7 @@ The field elements are:
 
 ### Text - A freeform text field
 
-```
+```json
 { "name": "My Text Field",
   "code": "mtf",
   "gsCol": "myTextField"
@@ -190,7 +179,7 @@ However, they are required to move past Pre-Match as they are key elements to tr
 
 ### Number - A text field, but restricted to numbers
 
-```
+```json
 { "name": "My Number Field",
   "code": "mnf",
   "type": "number",
@@ -199,7 +188,7 @@ However, they are required to move past Pre-Match as they are key elements to tr
   "disabled": "true",
   "defaultValue": 0,
   "tooltip": "Put help or more descriptive text here"
-},
+}
 ```
 
 Specific attributes to number are:
@@ -216,7 +205,7 @@ Special sub-elements of text are "match" and "team".  These sub-types will updat
 
 ### Counter - A counter that can be increased or decreased with a click or touch
 
-```
+```json
 { "name": "My counter",
   "code": "mc",
   "type": "counter",
@@ -236,7 +225,7 @@ If there is no defaultValue it will be reset to zero.
 
 ### Radio Buttons - A single choice between several Options
 
-```
+```json
 { "name": "My Radio Button",
   "code": "mrb",
   "type": "radio",
@@ -266,7 +255,7 @@ Special sub-elements of the radio button element are "level" and "robot".  When 
 
 ### Checkbox - A single on/off or yes/no check box
 
-```
+```json
 { "name": "My Checkbox",
   "code": "mc",
   "type": "checkbox",
@@ -282,7 +271,7 @@ You can also use type = "bool" which adds "(checked = Yes)" to the name.
 
 ### Timer - A time counter to count the number of seconds it takes to do something
 
-```
+```json
 { "name": "My Timer",
   "code": "mt",
   "type": "timer",
@@ -298,7 +287,7 @@ The sub-type of timer, cycle timer, will be described in the next section.
 
 ### Cycle Timer - Start the timer and with 1 click track cycle times of robots  
 
-```
+```json
 { "name": "My Cycle Timer",
   "code": "mct",
   "type": "cycle"
@@ -311,7 +300,7 @@ There are no specific attributes to this element.
 
 ### Clickable Image - Allow recording locations on an image  
 
-```
+```json
 { "name": "My Clickable Image",
   "code": "mci",
   "type": "clickable_image",
@@ -339,7 +328,7 @@ Specific attributes to Cycle Timer are:
   * onePerBox - only one click per box is stored.
 * showFlip (optional) - Show the "Flip" button.  (Default value: true)
 * showUndo (optional) - Show the "Undo" button.  (Default value: true)
-* shape (optional) - configure the shape shown on the image at the location of a click.  The format for this attribute is "shape size lineColor fillColor fill".<br>
+* shape (optional) - configure the shape shown on the image at the location of a click.  The format for this attribute is "shape size lineColor fillColor fill".  
   * shape - "circle" is the only supported shape at this time
   * size - the radius of the circle in pixels (Default value: 5)
   * lineColor - color of the outline of the circle. (Default value: white)
@@ -350,4 +339,4 @@ Specific attributes to Cycle Timer are:
 
 The element field_image has been deprecated in favor of the new more flexible clickable_image.  It is currently still supported, but may be removed from future releases.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+[Back to top](#scouting-pass-configuration)
