@@ -22,7 +22,7 @@ body {
 #auton_table,
 #endgame_table,
 #teleop_table {
-    font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
     color: black;
     font-size: 13px;
     font-style: bold;
@@ -32,7 +32,6 @@ body {
 }
 
 .button {
-    font-family: Alexis;
     font-size: 16px;
 }
 
@@ -94,7 +93,7 @@ input:hover {
     position: absolute;
     left: 0;
     top: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
     text-align: justify;
 }
 
@@ -108,7 +107,6 @@ input:hover {
 }
 
 h1 {
-    font-family: Alexis;
     text-align: center;
     font-size: 40px;
     padding: 10px;
