@@ -322,7 +322,8 @@ Specific attributes to Cycle Timer are:
 * filename - the location of the file image that you want to use.  It must be local to the web site you are using.
 * dimensions (optional) - this controls the number of boxes the image will be divided into.  The first value is the number boxes along the x-axis and the second number is the number of boxes along the y-axis.  (Default values are "12 6" for 72 boxes)
 * toggleClick (optional)- if set to "true", if a box has already been clicked, clicking it again will "unclick" that box.  It will no longer be stored and reported. (Default value: false)
-* clickRestrictions (optional) - this dictates how many clicks are allowed for this element.<br>Acceptable values are:<br>
+* clickRestrictions (optional) - this dictates how many clicks are allowed for this element.  
+Acceptable values are:  
   * none (default) - clicks are unrestricted
   * one - only one click is stored.  Clicks after the first will replace the value stored
   * onePerBox - only one click per box is stored.
