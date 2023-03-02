@@ -43,9 +43,6 @@ body {
     color: black;
 }
 
-#postmatchHeader {
-}
-
 h1,
 h2 {
     color: black;
@@ -104,14 +101,6 @@ input:hover {
 #prematch {
     display: table;
 }
-
-#auton {}
-
-#teleop {}
-
-#endgame {}
-
-#postmatch {}
 
 #qr-code {
     text-align: center;
