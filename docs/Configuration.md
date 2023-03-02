@@ -1,6 +1,6 @@
 # Scouting P.A.S.S. Configuration
 
-## **Configuration guide**
+## Configuration guide
 
 ### Table of Contents
 
