@@ -1,31 +1,20 @@
-<div id="top"></div>
+# Scouting P.A.S.S. Google Sheets
 
-# Scouting P.A.S.S. Google Sheets <BETA>
+## Table of Contents
 
-## Now supporting data storage in Google Sheets!
-### **^^^^^ This feature is in BETA looking for teams to test it ^^^^^**
-
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li><a href="#disclaimer">Disclaimer</a></li>
-    <li><a href="#description">Description</a></li>
-    <li><a href="#getting-started">Set Up</a></li>
-  </ol>
-</details>
-
-<div id="disclaimer"></div>
+1. [Disclaimer](#disclaimer)
+2. [Description](#description)
+3. [Getting Started](#set-up)
 
 ## Disclaimer
+
 This feature was implemented due to many requests.  This feature is not used currently by PWNAGE due to the "Low/No Bandwith" goal of our scouting system.
 Support for this feature will be secondary to our main features and possibly delayed due to not having a working environment for testing and debugging.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-<div id="description"></div>
+[Back to top](#scouting-pass-google-sheets)
 
-## Description:
+## Description
+
 Scouting PASS now implements an inteface to a Google Sheets spreadsheet.
 
 Data from the web page (form) will be packaged up and sent to your Google Sheets spreadsheet.
@@ -34,23 +23,23 @@ be populated.
 
 There is an extensive set-up process described in following section.  Follow the instructions carefully as it can be tricky in spots.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-<div id="getting-started"></div>
+[Back to top](#scouting-pass-google-sheets)
 
-## Set Up:
+## Set Up
 
-# Google Sheets Set up
+### Google Sheets Set up
 
 1. Create spreadheet
     * Create a new Google Spreadsheet on your Google Drive.
     * The "Sheet" needs to be named "Sheet1"
     * The first column header should be labeled "Date"
     * Create headers for all of your data elements (avoid spaces; not tested with spaces)
-3. Add script
+2. Add script
     * While still in the spreadsheet click Extensions -> Apps Script
     * Update the project name from "Untitled project" to something meaningful to you
     * Clear out the code there (i.e. MyFunction...) and replace it with this:
-```javascript
+
+    ```javascript
         const sheetName = 'Sheet1'
         const scriptProp = PropertiesService.getScriptProperties()
 
@@ -89,13 +78,14 @@ There is an extensive set-up process described in following section.  Follow the
             lock.releaseLock()
           }
         }
-```
+      ```
+
    * Save the project (Ctrl-S or click the floppy icon)
-5. Execute initialization
+3. Execute initialization
     * Next to the Debug menu item select "initialSetup" and click Run.
     * Google will pop up a warning screen.  Click "advanced" on the lower left side
     * You will need to select a Google Account to login as and grant permissions
-6. Create Trigger
+4. Create Trigger
     * Click on the "alarm" icon on the left side.
     * Click "Add Trigger" in the lower right corner.
     * Set the trigger with these parameters:
@@ -104,7 +94,7 @@ There is an extensive set-up process described in following section.  Follow the
         * Event Source:  From Spreadsheet
         * Event Type:  On Form Submit
     * Click Save  
-8. Deploy
+5. Deploy
     * Click on Deploy at the Top
     * Click "New Deployment"
     * Click the "Select Type" icon and select "Web App"
@@ -112,33 +102,34 @@ There is an extensive set-up process described in following section.  Follow the
     * Set "Execute as" to Me
     * Set "Who has access" to Anyone
     * Click Deploy
-10. Copy URL 
+6. Copy URL
     * After deploying, on the next screen, copy the Web App URL and save it.  You'll need it later.
 
-# Scouting P.A.S.S Set Up
+## Scouting P.A.S.S Set Up
 
 1. Set up the URL
-    * In resources/js/googleSheets.js, on line 2, replace <SCRIPT URL> with the URL you just copied from Google Sheets.  It needs to stay wrapped in single quotes.
+    * In resources/js/googleSheets.js, on line 2, replace `SCRIPT URL` with the URL you just copied from Google Sheets.  It needs to stay wrapped in single quotes.
 2. Enable Google Sheets in Scouting PASS
     * In your configuraiton file (i.e. 2022/RR_GS_config.js) at the top level add:
 
         `"enable_google_sheets": "true",`
     * Best place to add this is just after line 2, like this:
 
-```javascript
-        var config_data = `
-        {
-          "enable_google_sheets": "true",
-          "title": "Scouting PASS 2022",
-          "page_title": "Rapid React",
-          ...
-```
+    ```javascript
+            var config_data = `
+            {
+              "enable_google_sheets": "true",
+              "title": "Scouting PASS 2022",
+              "page_title": "Rapid React",
+              ...
+    ```
 
-2. Add gsCol tag in config file
+3. Add gsCol tag in config file
     * In that same configuration file, you need to add a "gsCol" tag for each element in the configuration script.  The gsCol (AKA Google Sheets Column) will tell Google
   Sheets which column to put the data in.
     * For example, the first entry in our configuraiton is Scouter Initials, the new entry with the gsCol tag would look like this:
-```json
+
+        ```json
             { "name": "Scouter Initials",
               "gsCol": "scouter",
               "code": "s",
@@ -147,11 +138,12 @@ There is an extensive set-up process described in following section.  Follow the
               "maxSize": 5,
               "required": "true"
             },
-```
+        ```
+
     * The scouter initials will be put in the column with the header "scouter"
     * Add that gsCol tag to all your elements to map that element to a header in your Google Sheets spreadsheet
     * If you mispell it or omit it, it will not populate in your spreadsheet
   
-## See 2022/RR_GS_config.js as an example of a configuration file that uses Google Sheets.
+See 2022/RR_GS_config.js as an example of a configuration file that uses Google Sheets.
   
-<p align="right">(<a href="#top">back to top</a>)</p>
+[Back to top](#scouting-pass-google-sheets)
