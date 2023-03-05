@@ -6,83 +6,11 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    color: black;
-    background: white;
 }
 
-#prematch_table,
-#postmatch_table {
-
-    font-family: Roboto, 'Helvetica Neue', sans-serif;
-    text-align: center;
-    color: black;
-    font-size: 13px;
-}
-
-#auton_table,
-#endgame_table,
-#teleop_table {
-    font-family: Roboto, 'Helvetica Neue', sans-serif;
-    color: black;
-    font-size: 13px;
-    font-style: bold;
-    letter-spacing: 1px;
-    border-width: 4px;
-    border-color: black;
-}
-
-.button {
-    font-size: 16px;
-}
-
-#autonHeader,
-#endgameHeader,
-#teleopHeader1,
-#teleopHeader2 {
-    color: black;
-}
-
-h1,
-h2 {
-    color: black;
-    border: none;
-    margin: 0px;
-}
-
-td {
-    font-family: Roboto, 'Helvetica Neue', sans-serif;
-}
-
-.field {
-    border-radius: 4px;
-}
-
-input {
-    padding: 4px;
-    border: 2px solid #aaa;
-    border-radius: 6px;
-}
-
-input:hover {
-    border: 2px solid #3af;
-}
-
-#prematchHeader2 {
-    margin-bottom: 15px;
-}
-
-#qrHeader1,
-#qrHeader2 {
-    color: black;
-}
-
-.field-image {
-    margin: 2vw;
-}
-
-.field-image-src {
-    background-position: center;
-    border: 1px solid;
+canvas {
+    border-radius: 15px;
+    opacity: 0.5;
 }
 
 .main-panel {
@@ -97,13 +25,40 @@ input:hover {
     text-align: justify;
 }
 
-#prematch {
-    display: table;
+#prematch_table,
+#postmatch_table {
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+    text-align: center;
+    font-size: 13px;
 }
 
-#qr-code {
+#prematch_table {
     text-align: center;
-    color: black;
+}
+
+#auton_table,
+#endgame_table,
+#teleop_table {
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+    font-size: 13px;
+    font-style: bold;
+    letter-spacing: 1px;
+}
+
+.button {
+    font-size: 16px;
+}
+
+h1,
+h2 {
+    margin: 0px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 25px;
+    font-family: Mukta, sans-serif;
+    font-weight: 300;
 }
 
 h1 {
@@ -114,20 +69,64 @@ h1 {
     font-weight: 350;
 }
 
-#page2,
-#page4 {
-    color: black;
+h1 .odd {
+    text-align: center;
 }
 
-h2 {
+h1 .even {
     text-align: center;
-    font-size: 25px;
-    font-family: Mukta, sans-serif;
-    font-weight: 300;
+}
+
+tr td {
+    background-color: var(--background-body);
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+    padding: 10px 4px;
+    margin: auto;
+}
+
+.field {
+    border-radius: 4px;
+    width: 50%;
+    text-align: left;
+}
+
+input {
+    padding: 4px;
+    border: 1px solid var(--border);
+}
+
+#prematchHeader2 {
+    margin-bottom: 15px;
+}
+
+.field-image {
+    margin: 2vw;
+}
+
+.field-image-src {
+    background-position: center;
+}
+
+#prematch {
+    display: table;
+}
+
+#qr-code {
+    text-align: center;
+}
+
+#qr-code canvas {
+    display: block;
+    margin: auto;
+    opacity: 1;
 }
 
 .match-label {
     text-align: center;
+}
+
+input:hover {
+    font-weight: bold;
 }
 
 .half-button-l {
@@ -149,44 +148,42 @@ h2 {
     display: flex;
 }
 
-#nextButton1,
 #nextButton2,
-#nextButton9,
-#nextButton10,
 .clearForm,
 .submitForm,
 #displayButton,
 #copyButton {
+    display: inline-block;
     padding: 10px;
     text-decoration: none;
-    display: inline-block;
-    border: 2px solid #ccc;
-    border-radius: 4px;
 }
 
+#nextButton1,
 #nextButton3,
 #nextButton4,
 #nextButton5,
 #nextButton6,
 #nextButton7,
-#nextButton8 {
-    background-color: white;
+#nextButton8,
+#nextButton10 {
+    display: block;
     padding: 10px;
-    color: black;
+    text-decoration: none;
+    width: 150px;
 }
 
 .undoButton,
 .flipButton {
-    background-color: white;
-    padding: 10px;
-    color: black;
-    margin-left: 20px;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 150px;
+    text-align: center;
 }
 
-#prevButton7,
-#prevButton8,
-#prevButton9 {
-    padding: 10px;
+.undoButton {
+    float: left;
+    margin-left: calc(50vw - 155px);
 }
 
 #prevButton1,
@@ -194,54 +191,83 @@ h2 {
 #prevButton3,
 #prevButton4,
 #prevButton5,
-#prevButton6 {
-    background-color: white;
+#prevButton6,
+#prevButton6,
+#prevButton8 {
+    display: block;
     padding: 10px;
-    color: black;
-
+    width: 150px;
+    float: left;
+    margin-left: calc(50% - 155px);
 }
 
-#prematch_table {
-    text-align: center;
-    border: none;
-}
-
-
-h1 .odd {
-    text-align: center;
-    color: #0AB4EC;
-}
-
-h1 .even {
-    text-align: center;
-    color: #42B333;
+#prevButton9 {
+    display: block;
+    margin: auto;
 }
 
 table {
     width: 100%;
 }
 
-td {
-    padding: 10px 4px;
-}
-
 .title {
-    width: "50%";
+    width: 50%;
     text-align: right;
-}
-
-.field {
-    width: "50%";
-    text-align: left;
 }
 
 #qr-table {
     text-align: center;
-    color: black;
-    background-color: white;
 }
 
 #data {
     font-family: 'Lucida Console', 'monospace';
     text-align: justify;
+}
+
+#display_tct {
+    display: inline-block;
+    margin: auto;
+}
+
+#start_tct,
+#input_tct,
+#clear_tct {
+    display: inline-block;
+    width: 100px;
+    margin-top: 10px;
+}
+
+#cycle_tct,
+#undo_tct {
+    display: inline-block;
+    width: 150px;
+}
+
+#minus_tfc,
+#input_tfc,
+#plus_tfc {
+    display: inline-block;
+    width: 50px;
+}
+
+#start_dt,
+#input_dt,
+#clear_dt {
+    display: inline-block;
+    width: 100px;
+    margin-top: 10px;
+}
+
+#minus_dn,
+#input_dn,
+#plus_dn {
+    display: inline-block;
+    width: 50px;
+}
+
+#minus_ls,
+#input_ls,
+#plus_ls {
+    display: inline-block;
+    width: 50px;
 }
