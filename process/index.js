@@ -25,7 +25,7 @@ const convert = () => {
             if (fieldNames.includes(col)) {
                 const field = fields[fieldNames.indexOf(col)]
                 const value = field.split('=')[1]
-                entryData.push(value)
+                entryData.push(value.replace(/\,/g, '%2C'))
             } else {
                 entryData.push(null)
             }
