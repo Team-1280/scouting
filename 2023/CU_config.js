@@ -6,7 +6,7 @@ var config_data = `
   "enable_google_sheets": "true",
   "prematch": [
     { "name": "Scouter Initials",
-      "code": "s",
+      "code": "scouter-initials",
       "type": "scouter",
       "gsCol": "scouter",
       "size": 5,
@@ -14,7 +14,7 @@ var config_data = `
       "required": "true"
     },
     { "name": "Event",
-      "code": "e",
+      "code": "event",
       "type": "event",
       "gsCol": "event",
       "defaultValue": "2023cada",
@@ -22,7 +22,7 @@ var config_data = `
       "disabled": "true"
     },
     { "name": "Match Level",
-      "code": "l",
+      "code": "match-level",
       "type": "level",
       "gsCol": "level",
       "choices": {
@@ -34,7 +34,7 @@ var config_data = `
       "required": "true"
     },
     { "name": "Match #",
-      "code": "m",
+      "code": "match-no",
       "type": "match",
       "gsCol": "match",
       "min": 1,
@@ -42,7 +42,7 @@ var config_data = `
       "required": "true"
     },
     { "name": "Robot",
-      "code": "r",
+      "code": "robot",
       "type": "robot",
       "gsCol": "robot",
       "choices": {
@@ -56,14 +56,15 @@ var config_data = `
       "required":"true"
     },
     { "name": "Team #",
-      "code": "t",
+      "code": "team-no",
       "type": "team",
       "gsCol": "team",
       "min": 1,
-      "max": 99999
+      "max": 99999,
+      "defaultValue": 1280
     },
     { "name": "Auto Start Position",
-      "code": "as",
+      "code": "auto-start-pos",
       "type": "clickable_image",
       "gsCol": "autoStart",
       "filename": "2023/field_image.png",
@@ -73,7 +74,7 @@ var config_data = `
   ],
   "auton": [
     { "name": "Auto Scoring",
-      "code": "asg",
+      "code": "auto-scoring",
       "type": "clickable_image",
       "gsCol": "autoScore",
       "filename": "2023/grid_image.png",
@@ -85,22 +86,22 @@ var config_data = `
       "shape": "circle 12 black red true"
     },
     { "name": "Crossed Cable",
-      "code": "acc",
+      "code": "crossed-cable",
       "type": "bool",
       "gsCol": "cable"
     },
     { "name": "Crossed Charging Station",
-      "code": "acs",
+      "code": "crossed-charge",
       "type": "bool",
       "gsCol": "charge"
     },
     { "name": "Mobility?",
-      "code": "am",
+      "code": "mobility",
       "type": "bool",
       "gsCol": "mobility"
     },
     { "name": "Docked",
-      "code": "ad",
+      "code": "docked",
       "type":"radio",
       "gsCol": "docked",
       "choices": {
@@ -114,12 +115,12 @@ var config_data = `
   ],
   "teleop": [
     { "name": "Cycle Timer",
-      "code": "tct",
+      "code": "cycle-timer",
       "type": "cycle",
       "gsCol": "cycle"
     },
     { "name": "Grid Scoring",
-      "code": "tsg",
+      "code": "grid-scoring",
       "type": "clickable_image",
       "gsCol": "gridScore",
       "filename": "2023/grid_image.png",
@@ -132,33 +133,33 @@ var config_data = `
       "cycleTimer": "tct"
     },
     { "name": "Feeder Count<br>(Fed another bot)",
-      "code": "tfc",
+      "code": "feeder-count",
       "type": "counter",
       "gsCol": "feeder",
       "cycleTimer": "tct"
     },
     { "name": "Was Fed<br>Game Pieces",
-      "code": "wf",
+      "code": "was-fed",
       "type": "bool",
       "gsCol": "feeder"
     },
     { "name": "Was Defended",
-      "code": "wd",
+      "code": "was-defended",
       "type": "bool",
       "gsCol": "defended"
     },
     { "name": "Who Defended this bot",
-      "code": "who",
+      "code": "defended-by",
       "type": "text",
       "gsCol": "defendedBy"
     },
     { "name": "Smart Placement<br>(creates Links)",
-      "code": "lnk",
+      "code": "smart-placement",
       "type": "bool",
       "gsCol": "smartPlacement"
     },
     { "name": "Floor Pickup",
-      "code": "fpu",
+      "code": "floor-pickup",
       "type": "radio",
       "gsCol": "floor",
       "choices": {
@@ -172,12 +173,12 @@ var config_data = `
   ],
   "endgame": [
     { "name": "Docking Timer",
-      "code": "dt",
+      "code": "docking-timer",
       "type": "timer",
       "gsCol": "dockingTime"
     },
     { "name": "Final Status",
-      "code": "fs",
+      "code": "final-status",
       "type":"radio",
       "gsCol": "finalStatus",
       "choices": {
@@ -190,14 +191,14 @@ var config_data = `
       "defaultValue": "x"
     },
     { "name": "Total # of alliance<br>robots docked/engaged",
-      "code": "dn",
+      "code": "total-alliance-docked-or-engaged",
       "type": "counter",
       "gsCol": "totalDocked"
     }
   ],
   "postmatch": [
     { "name": "Driver Skill",
-      "code": "ds",
+      "code": "driver-skill",
       "type": "radio",
       "gsCol": "skill",
       "choices": {
@@ -209,12 +210,12 @@ var config_data = `
       "defaultValue": "x"
     },
     { "name": "Links Scored",
-      "code": "ls",
+      "code": "links-scored",
       "type": "counter",
       "gsCol": "links"
     },
     { "name": "Defense Rating",
-      "code": "dr",
+      "code": "defense",
       "type": "radio",
       "gsCol": "defenseRating",
       "choices": {
@@ -227,12 +228,12 @@ var config_data = `
       "defaultValue": "x"
     },
     { "name": "Swerve drive?",
-      "code": "sd",
+      "code": "swerve",
       "type": "bool",
       "gsCol": "swerve"
     },
     { "name": "Speed Rating",
-      "code": "sr",
+      "code": "speed",
       "type": "radio",
       "gsCol": "speed",
       "choices": {
@@ -245,28 +246,28 @@ var config_data = `
       "defaultValue":"3"
     },
     { "name": "Died/Immobilized",
-      "code": "die",
+      "code": "died",
       "type": "bool",
       "gsCol": "died"
     },
     { "name": "Tippy<br>(almost tipped over)",
-      "code": "tip",
+      "code": "tipped",
       "type": "bool",
       "gsCol": "tipping"
     },
     { "name": "Dropped Cones (>2)",
-      "code": "dc",
+      "code": "dropped-cones",
       "type": "bool",
       "gsCol": "droppedCones"
     },
     { "name": "Make good<br>alliance partner?",
       "tooltip": "Would you want this robot on your alliance in eliminations?",
-      "code": "all",
+      "code": "alliance",
       "type": "bool",
       "gsCol": "alliance"
     },
     { "name": "Comments",
-      "code": "co",
+      "code": "comments",
       "type": "text",
       "gsCol": "comments",
       "size": 15,
