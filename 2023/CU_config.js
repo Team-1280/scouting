@@ -6,7 +6,7 @@ var config_data = `
   "enable_google_sheets": "true",
   "prematch": [
     { "name": "Scouter Initials",
-      "code": "scouter-initials",
+      "code": "s",
       "type": "scouter",
       "gsCol": "scouter",
       "size": 5,
@@ -14,7 +14,7 @@ var config_data = `
       "required": "true"
     },
     { "name": "Event",
-      "code": "event",
+      "code": "e",
       "type": "event",
       "gsCol": "event",
       "defaultValue": "2023cada",
@@ -22,7 +22,7 @@ var config_data = `
       "disabled": "true"
     },
     { "name": "Match Level",
-      "code": "match-level",
+      "code": "l",
       "type": "level",
       "gsCol": "level",
       "choices": {
@@ -30,11 +30,11 @@ var config_data = `
         "de": "Double Elimination<br>",
         "f": "Finals"
       },
-      "defaultValue": "qm",
+      "defaultValue": "quals",
       "required": "true"
     },
     { "name": "Match #",
-      "code": "match-no",
+      "code": "m",
       "type": "match",
       "gsCol": "match",
       "min": 1,
@@ -42,7 +42,7 @@ var config_data = `
       "required": "true"
     },
     { "name": "Robot",
-      "code": "robot",
+      "code": "r",
       "type": "robot",
       "gsCol": "robot",
       "choices": {
@@ -56,15 +56,14 @@ var config_data = `
       "required":"true"
     },
     { "name": "Team #",
-      "code": "team-no",
+      "code": "t",
       "type": "team",
       "gsCol": "team",
       "min": 1,
-      "max": 99999,
-      "defaultValue": 1280
+      "max": 99999
     },
     { "name": "Auto Start Position",
-      "code": "auto-start-pos",
+      "code": "as",
       "type": "clickable_image",
       "gsCol": "autoStart",
       "filename": "2023/field_image.png",
@@ -105,9 +104,9 @@ var config_data = `
       "type":"radio",
       "gsCol": "docked",
       "choices": {
-        "d": "Docked (not Engaged)<br>",
-        "e": "Engaged<br>",
-        "a": "Attempted but failed<br>",
+        "docked": "Docked (not Engaged)<br>",
+        "engaged": "Engaged<br>",
+        "attempted-failed": "Attempted but failed<br>",
         "x": "Not attempted"
       },
       "defaultValue": "x"
@@ -163,9 +162,9 @@ var config_data = `
       "type": "radio",
       "gsCol": "floor",
       "choices": {
-        "o": "Cones<br>",
-        "u": "Cubes<br>",
-        "b": "Both<br>",
+        "cone": "Cones<br>",
+        "cube": "Cubes<br>",
+        "both": "Both<br>",
         "x": "Not Attempted"
       },
       "defaultValue": "x"
@@ -182,10 +181,10 @@ var config_data = `
       "type":"radio",
       "gsCol": "finalStatus",
       "choices": {
-        "p": "Parked<br>",
-        "d": "Docked (Not Engaged)<br>",
-        "e": "Engaged<br>",
-        "a": "Attempted but failed<br>",
+        "park": "Parked<br>",
+        "dock": "Docked (Not Engaged)<br>",
+        "engage": "Engaged<br>",
+        "failed": "Attempted but failed<br>",
         "x": "Not attempted"
       },
       "defaultValue": "x"
@@ -202,9 +201,9 @@ var config_data = `
       "type": "radio",
       "gsCol": "skill",
       "choices": {
-        "n": "Not Effective<br>",
-        "a": "Average<br>",
-        "v": "Very Effective<br>",
+        "not-eff": "Not Effective<br>",
+        "avg": "Average<br>",
+        "very-eff": "Very Effective<br>",
         "x": "Not Observed"
       },
       "defaultValue": "x"
@@ -219,10 +218,10 @@ var config_data = `
       "type": "radio",
       "gsCol": "defenseRating",
       "choices": {
-        "b": "Below Average<br>",
-        "a": "Average<br>",
-        "g": "Good<br>",
-        "e": "Excellent<br>",
+        "below-avg": "Below Average<br>",
+        "avg": "Average<br>",
+        "good": "Good<br>",
+        "excellent": "Excellent<br>",
         "x": "Did not play defense"
       },
       "defaultValue": "x"

@@ -237,50 +237,50 @@ table {
     margin: auto;
 }
 
-#display_tct {
+#display_cycle-timer {
     display: inline-block;
     margin: auto;
 }
 
-#start_tct,
-#input_tct,
-#clear_tct {
+#start_cycle-timer,
+#input_cycle-timer,
+#clear_cycle-timer {
     display: inline-block;
     width: 100px;
     margin-top: 10px;
 }
 
-#cycle_tct,
-#undo_tct {
+#cycle_cycle-timer,
+#undo_cycle-timer {
     display: inline-block;
     width: 150px;
 }
 
-#minus_tfc,
-#input_tfc,
-#plus_tfc {
+#minus_feeder-count,
+#input_feeder-count,
+#plus_feeder-count {
     display: inline-block;
     width: 50px;
 }
 
-#start_dt,
-#input_dt,
-#clear_dt {
+#start_docking-timer,
+#input_docking-timer,
+#clear_docking-timer {
     display: inline-block;
     width: 100px;
     margin-top: 10px;
 }
 
-#minus_dn,
-#input_dn,
-#plus_dn {
+#minus_total-alliance-docked-or-engaged,
+#input_total-alliance-docked-or-engaged,
+#plus_total-alliance-docked-or-engaged {
     display: inline-block;
     width: 50px;
 }
 
-#minus_ls,
-#input_ls,
-#plus_ls {
+#minus_links-scored,
+#input_links-scored,
+#plus_links-scored {
     display: inline-block;
     width: 50px;
 }

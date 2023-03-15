@@ -5,9 +5,8 @@ var config_data = `
   "pitConfig": "true",
   "prematch": [
     { "name": "Team Number",
-      "code": "team_no",
-      "type": "number",
-      "defaultValue": 1280
+      "code": "t",
+      "type": "number"
     },
     { "name": "Width",
       "code": "width",
@@ -23,11 +22,11 @@ var config_data = `
       "code": "drivetrain",
       "type": "radio",
       "choices": {
-        "s": "Swerve<br>",
-        "w": "West Coast/Tank<br>",
-        "b": "Butterfly/Grashopper<br>",
-        "m": "Mechanum<br>",
-        "o": "Other"
+        "swerve": "Swerve<br>",
+        "tank": "West Coast/Tank<br>",
+        "butterfly": "Butterfly/Grashopper<br>",
+        "mecanum": "Mecanum<br>",
+        "other": "Other"
       },
       "defaultValue": "o"
     },
@@ -53,10 +52,10 @@ var config_data = `
       "code": "motor",
       "type": "radio",
       "choices": {
-        "n": "Neo<br>",
-        "f": "Falcon<br>",
-        "c": "CIM<br>",
-        "x": "Other<br>"
+        "neo": "Neo<br>",
+        "falcon": "Falcon<br>",
+        "cim": "CIM<br>",
+        "other": "Other<br>"
       },
       "defaultValue":"x"
     },
