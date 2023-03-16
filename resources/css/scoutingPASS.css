@@ -238,27 +238,31 @@ table {
 }
 
 #display_cycle-timer {
-    display: inline-block;
+    display: none;
     margin: auto;
 }
 
 #start_cycle-timer,
 #input_cycle-timer,
-#clear_cycle-timer {
-    display: inline-block;
-    width: 100px;
-    margin-top: 10px;
-}
-
+#clear_cycle-timer,
 #cycle_cycle-timer,
 #undo_cycle-timer {
-    display: inline-block;
-    width: 150px;
+    display: none;
 }
 
 #minus_feeder-count,
 #input_feeder-count,
 #plus_feeder-count {
+    display: inline-block;
+    width: 50px;
+}
+
+#minus_cone-count,
+#input_cone-count,
+#plus_cone-count,
+#minus_cube-count,
+#input_cube-count,
+#plus_cube-count {
     display: inline-block;
     width: 50px;
 }

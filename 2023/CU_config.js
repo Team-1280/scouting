@@ -84,16 +84,6 @@ var config_data = `
       "showUndo": "false",
       "shape": "circle 12 black red true"
     },
-    { "name": "Crossed Cable",
-      "code": "crossed-cable",
-      "type": "bool",
-      "gsCol": "cable"
-    },
-    { "name": "Crossed Charging Station",
-      "code": "crossed-charge",
-      "type": "bool",
-      "gsCol": "charge"
-    },
     { "name": "Mobility?",
       "code": "mobility",
       "type": "bool",
@@ -113,44 +103,22 @@ var config_data = `
     }
   ],
   "teleop": [
-    { "name": "Cycle Timer",
+    { "name": "No cycle timer",
       "code": "cycle-timer",
       "type": "cycle",
       "gsCol": "cycle"
     },
-    { "name": "Grid Scoring",
-      "code": "grid-scoring",
-      "type": "clickable_image",
-      "gsCol": "gridScore",
-      "filename": "2023/grid_image.png",
-      "dimensions": "9 4",
-      "clickRestriction": "onePerBox",
-      "toggleClick": "true",
-      "showFlip": "false",
-      "showUndo": "false",
-      "shape": "circle 12 black red true",
-      "cycleTimer": "tct"
-    },
-    { "name": "Feeder Count<br>(Fed another bot)",
-      "code": "feeder-count",
+    { "name": "Cones scored",
+      "code": "cone-count",
       "type": "counter",
-      "gsCol": "feeder",
+      "gsCol": "cones",
       "cycleTimer": "tct"
     },
-    { "name": "Was Fed<br>Game Pieces",
-      "code": "was-fed",
-      "type": "bool",
-      "gsCol": "feeder"
-    },
-    { "name": "Was Defended",
-      "code": "was-defended",
-      "type": "bool",
-      "gsCol": "defended"
-    },
-    { "name": "Who Defended this bot",
-      "code": "defended-by",
-      "type": "text",
-      "gsCol": "defendedBy"
+    { "name": "Cubes scored",
+      "code": "cube-count",
+      "type": "counter",
+      "gsCol": "cubes",
+      "cycleTimer": "tct"
     },
     { "name": "Smart Placement<br>(creates Links)",
       "code": "smart-placement",
