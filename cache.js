@@ -32,6 +32,10 @@ var assets = [
   './resources/js/googleSheets.js',
   './resources/js/scoutingPASS.js',
   './resources/js/TBAInterface.js',
+  './serviceWorker.js',
+  './site.webmanifest',
+  './offline.js',
+  './cache.js',
   './process/index.css',
   './process/index.html',
   './process/index.js',
@@ -39,7 +43,11 @@ var assets = [
   './2023/CU_Pit_config.js',
   './2023/field_image.png',
   './2023/grid_image_alt.png',
-  './2023/grid_image.png'
+  './2023/grid_image.png',
+  './android-chrome-192x192.png',
+  './android-chrome-512x512.png',
+  './favicon-32x32.png',
+  './favicon-16x16.png'
 ]
 
 // cache responses of provided URLs
