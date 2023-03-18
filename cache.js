@@ -23,6 +23,7 @@ const cacheAssets = assets => {
 
 // list of URLs to be cached
 var assets = [
+  './index.html',
   './pit.html',
   './favicon.ico',
   './resources/css/normalize.css',
@@ -34,7 +35,6 @@ var assets = [
   './resources/js/TBAInterface.js',
   './serviceWorker.js',
   './site.webmanifest',
-  './offline.js',
   './cache.js',
   './process/index.css',
   './process/index.html',
