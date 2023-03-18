@@ -1,9 +1,11 @@
-// register service worker
-navigator.serviceWorker.register('offline.js', { scope: './' })
-  .then(navigator.serviceWorker.ready)
-  .then(() => {
-    console.log('Service worker successfully registered!')
-  })
-  .catch(e => {
-    console.log('Error when registering service worker.', e, arguments)
-  })
+// this is a service worker that intercepts all HTTP requests
+self.addEventListener('fetch', getter = (e) => {
+  const request = e.request
+  e.respondWith(
+    caches.match(e.request).then(res => {
+      // return from cache, otherwise fetch from network
+      return res || fetch(request)
+    })
+  )
+  // otherwise: ignore event
+})
