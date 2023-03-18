@@ -1439,7 +1439,7 @@ function flip(event) {
 }
 
 function displayData() {
-  document.getElementById('data').innerHTML = getData(true);
+  document.getElementById('data').innerText = getData(true);
 }
 
 function copyData() {
