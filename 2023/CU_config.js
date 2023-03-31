@@ -17,7 +17,7 @@ var config_data = `
       "code": "e",
       "type": "event",
       "gsCol": "event",
-      "defaultValue": "2023cada",
+      "defaultValue": "2023camb",
       "required": "true",
       "disabled": "true"
     },
